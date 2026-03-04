@@ -1,4 +1,4 @@
-name: CI
+name: Validate Skill
 
 on:
   push:
@@ -7,31 +7,86 @@ on:
     branches: [main]
 
 jobs:
-  lint:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install dependencies
-        run: pip install -e ".[dev]"
-      - name: Lint with Ruff
-        run: ruff check src/ tests/
-      - name: Type check with mypy
-        run: mypy src/
 
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.10", "3.11", "3.12"]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
-        run: pip install -e ".[dev]"
-      - name: Run tests
-        run: pytest --cov=openclaw_plugin --cov-report=term-missing
+      - name: Check SKILL.md exists
+        run: test -f SKILL.md || (echo "SKILL.md not found" && exit 1)
+
+      - name: Validate YAML frontmatter
+        run: |
+          python3 << 'EOF'
+          import re
+          import yaml
+
+          with open('SKILL.md', 'r') as f:
+              content = f.read()
+
+          # Extract frontmatter
+          match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+          if not match:
+              print("ERROR: SKILL.md missing YAML frontmatter (--- ... ---)")
+              exit(1)
+
+          try:
+              frontmatter = yaml.safe_load(match.group(1))
+          except yaml.YAMLError as e:
+              print(f"ERROR: Invalid YAML in frontmatter: {e}")
+              exit(1)
+
+          # Validate required fields
+          if 'name' not in frontmatter:
+              print("ERROR: Missing required field 'name' in frontmatter")
+              exit(1)
+
+          if 'description' not in frontmatter:
+              print("ERROR: Missing required field 'description' in frontmatter")
+              exit(1)
+
+          # Validate field types
+          if not isinstance(frontmatter['name'], str):
+              print("ERROR: 'name' must be a string")
+              exit(1)
+
+          if not isinstance(frontmatter['description'], str):
+              print("ERROR: 'description' must be a string")
+              exit(1)
+
+          print("✓ SKILL.md frontmatter is valid")
+          print(f"✓ Skill name: {frontmatter['name']}")
+          print(f"✓ Description: {frontmatter['description']}")
+          EOF
+
+      - name: Validate markdown body exists
+        run: |
+          python3 << 'EOF'
+          import re
+
+          with open('SKILL.md', 'r') as f:
+              content = f.read()
+
+          # Check if there's content after frontmatter
+          match = re.match(r'^---\s*\n.*?\n---\s*\n(.*)', content, re.DOTALL)
+          if not match or not match.group(1).strip():
+              print("WARNING: SKILL.md has minimal or no markdown body")
+              print("Consider adding sections: Purpose, When to Use, Setup, Commands, Examples")
+          else:
+              print("✓ SKILL.md has markdown body content")
+          EOF
+
+      - name: Check for example skills
+        run: |
+          if [ -d "examples" ]; then
+            count=$(find examples -name "SKILL.md" 2>/dev/null | wc -l)
+            if [ "$count" -gt 0 ]; then
+              echo "✓ Found $count example skill(s)"
+            fi
+          fi
+
+      - name: Validate README exists
+        run: test -f README.md && echo "✓ README.md found" || echo "WARNING: README.md not found"
+
+      - name: Validate LICENSE exists
+        run: test -f LICENSE && echo "✓ LICENSE found" || echo "WARNING: LICENSE not found"
