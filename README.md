@@ -1,8 +1,12 @@
 # OpenClaw Skill Template
 
-A starter template for creating OpenClaw Skills. **Skills** are language-agnostic Markdown files with YAML frontmatter that extend Claude's capabilities by providing access to tools, APIs, and external systems.
+[![Use this template](https://img.shields.io/badge/use%20this-template-0075ca?logo=github)](https://github.com/OpenClawHQ/plugin-template/generate) [![CI](https://github.com/OpenClawHQ/plugin-template/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenClawHQ/plugin-template/actions) [![ClawHub](https://img.shields.io/badge/publish%20to-ClawHub-E03E3E)](https://clawhub.com) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
-**Fork this repo** and start building your own skill to extend Claude's reach.
+**[中文文档 →](./README.zh.md)**
+
+A starter template for creating OpenClaw Skills. **Skills** are language-agnostic Markdown files with YAML frontmatter that extend OpenClaw's capabilities by providing access to tools, APIs, and external systems.
+
+**Fork this repo** and start building your own skill. Every claw extends the reach.
 
 ## What is an OpenClaw Skill?
 
