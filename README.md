@@ -1,21 +1,21 @@
-# OpenClaw Skill Template
+# Skill Template
 
 [![Use this template](https://img.shields.io/badge/use%20this-template-0075ca?logo=github)](https://github.com/effectorHQ/plugin-template/generate) [![CI](https://github.com/effectorHQ/plugin-template/actions/workflows/ci.yml/badge.svg)](https://github.com/effectorHQ/plugin-template/actions) [![ClawHub](https://img.shields.io/badge/publish%20to-ClawHub-E03E3E)](https://clawhub.com) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 **[中文文档 →](./README.zh.md)**
 
-A starter template for creating OpenClaw Skills. **Skills** are language-agnostic Markdown files with YAML frontmatter that extend OpenClaw's capabilities by providing access to tools, APIs, and external systems.
+A starter template for creating Skills — the core capability unit in the [effectorHQ](https://github.com/effectorHQ) ecosystem. **Skills** are language-agnostic Markdown files with YAML frontmatter that extend an agent's capabilities by providing access to tools, APIs, and external systems.
 
 **Fork this repo** and start building your own skill. Every effector extends the reach.
 
-## What is an OpenClaw Skill?
+## What is a Skill?
 
-An OpenClaw Skill is a Markdown file (`SKILL.md`) containing:
+A Skill is a Markdown file (`SKILL.md`) containing:
 
 - **YAML frontmatter**: Metadata (name, description, requirements, installation instructions)
 - **Markdown body**: Documentation describing purpose, usage, commands, and examples
 
-Skills are distributed via the **ClawHub registry** and installed locally to `~/.openclaw/workspace/skills/<skill-name>/`. They enable Claude to interact with external systems without requiring code deployments or complex plugin infrastructure.
+Skills are distributed via the **ClawHub registry** and installed locally to `~/.openclaw/workspace/skills/<skill-name>/`. They enable agents to interact with external systems without requiring code deployments or complex plugin infrastructure. See the [linear-skill](https://github.com/effectorHQ/linear-skill) for a reference implementation.
 
 ## Quick Start
 
@@ -233,9 +233,11 @@ For tools without package managers or custom setups:
 
 ## Resources
 
-- **OpenClaw Docs**: https://docs.openclaw.io
-- **ClawHub Registry**: https://clawhub.io
-- **GitHub Skills Repository**: https://github.com/effectorHQ/skills
+- **effectorHQ**: https://github.com/effectorHQ
+- **ClawHub Registry**: https://clawhub.com
+- **Reference Skill**: https://github.com/effectorHQ/linear-skill
+- **Skill Lint**: https://github.com/effectorHQ/skill-lint
+- **Skill Eval**: https://github.com/effectorHQ/skill-eval
 - **Contributing Guide**: https://github.com/effectorHQ/.github/blob/main/CONTRIBUTING.md
 
 ## Contributing
@@ -248,4 +250,4 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-Built with the [OpenClaw Skill Template](https://github.com/effectorHQ/skill-template). Every skill extends Claude's reach.
+Built with the [effectorHQ Skill Template](https://github.com/effectorHQ/plugin-template). Every effector extends the reach.

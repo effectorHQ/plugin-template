@@ -187,7 +187,7 @@ skill 完成后：
 
 ## 资源
 
-- **OpenClaw 文档**：https://docs.openclaw.io
+- **OpenClaw 文档**：https://github.com/effectorHQ
 - **ClawHub 注册中心**：https://clawhub.com
 - **贡献指南**：https://github.com/effectorHQ/.github/blob/main/CONTRIBUTING.md
 - **参考实现**：https://github.com/effectorHQ/linear-skill（零 lint 错误的生产级 skill 示例）
