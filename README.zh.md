@@ -1,21 +1,21 @@
-# OpenClaw Skill 模板
+# Skill 模板
 
 [![使用此模板](https://img.shields.io/badge/use%20this-template-0075ca?logo=github)](https://github.com/effectorHQ/plugin-template/generate) [![CI](https://github.com/effectorHQ/plugin-template/actions/workflows/ci.yml/badge.svg)](https://github.com/effectorHQ/plugin-template/actions) [![ClawHub](https://img.shields.io/badge/publish%20to-ClawHub-E03E3E)](https://clawhub.com) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 **[English →](./README.md)**
 
-一个创建 OpenClaw Skill 的起始模板。**Skills** 是带有 YAML frontmatter 的语言无关 Markdown 文件，通过提供对工具、API 和外部系统的访问来扩展 OpenClaw 的能力。
+一个创建 Skill 的起始模板。**Skills** 是带有 YAML frontmatter 的语言无关 Markdown 文件，通过提供对工具、API 和外部系统的访问来扩展 agent 的能力。
 
 **Fork 此 repo**，开始构建你自己的 skill。每一条 claw 都能延伸触达。
 
-## 什么是 OpenClaw Skill？
+## 什么是 Skill？
 
-OpenClaw Skill 是一个 Markdown 文件（`SKILL.md`），包含：
+Skill 是一个 Markdown 文件（`SKILL.md`），包含：
 
 - **YAML frontmatter**：metadata（name、description、依赖、安装说明）
 - **Markdown body**：描述用途、用法、命令和示例的文档
 
-Skills 通过 **ClawHub 注册中心**分发，安装到本地 `~/.openclaw/workspace/skills/<skill-name>/` 目录。它们让 OpenClaw 能够与外部系统交互，无需代码部署或复杂的 plugin 基础设施。
+Skills 通过 **ClawHub 注册中心**分发，安装到本地 `~/.openclaw/workspace/skills/<skill-name>/` 目录。它们让 agent 能够与外部系统交互，无需代码部署或复杂的 plugin 基础设施。
 
 ## 快速开始
 
@@ -187,7 +187,7 @@ skill 完成后：
 
 ## 资源
 
-- **OpenClaw 文档**：https://github.com/effectorHQ
+- **effectorHQ**：https://github.com/effectorHQ
 - **ClawHub 注册中心**：https://clawhub.com
 - **贡献指南**：https://github.com/effectorHQ/.github/blob/main/CONTRIBUTING.md
 - **参考实现**：https://github.com/effectorHQ/linear-skill（零 lint 错误的生产级 skill 示例）
@@ -198,4 +198,4 @@ MIT License。详见 [LICENSE](LICENSE)。
 
 ---
 
-由 [OpenClaw Skill 模板](https://github.com/effectorHQ/plugin-template)构建。每一条 claw 都能延伸触达。
+由 [effectorHQ Skill 模板](https://github.com/effectorHQ/plugin-template)构建。每一条 claw 都能延伸触达。
