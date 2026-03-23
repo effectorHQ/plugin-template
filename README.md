@@ -1,6 +1,6 @@
 # Skill Template
 
-[![Use this template](https://img.shields.io/badge/use%20this-template-0075ca?logo=github)](https://github.com/effectorHQ/plugin-template/generate) [![CI](https://github.com/effectorHQ/plugin-template/actions/workflows/ci.yml/badge.svg)](https://github.com/effectorHQ/plugin-template/actions) [![ClawHub](https://img.shields.io/badge/publish%20to-ClawHub-E03E3E)](https://clawhub.com) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Use this template](https://img.shields.io/badge/use%20this-template-0075ca?logo=github)](https://github.com/effectorHQ/plugin-template/generate) [![CI](https://github.com/effectorHQ/plugin-template/actions/workflows/ci.yml/badge.svg)](https://github.com/effectorHQ/plugin-template/actions) [![ClawHub](https://img.shields.io/badge/publish%20to-ClawHub-E03E3E)](https://clawhub.com) [![License: Apache 2.0](https://img.shields.io/badge/license-Apache-2.0-blue.svg)](./LICENSE)
 
 **[中文文档 →](./README.zh.md)**
 
@@ -86,7 +86,7 @@ my-skill/
 ├── SKILL.md          # Main skill file with frontmatter and docs
 ├── README.md         # This file
 ├── CHANGELOG.md      # Version history
-├── LICENSE           # MIT License
+├── LICENSE           # Apache License 2.0
 ├── .github/
 │   └── workflows/
 │       └── ci.yml    # GitHub Actions validation
@@ -246,7 +246,10 @@ Have questions or found an issue? Open an issue or submit a PR on GitHub.
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+
+This project is currently licensed under the Apache 2.0 License 。
+
+Apache License 2.0. See [LICENSE](LICENSE) for details.
 
 ---
 
