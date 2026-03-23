@@ -88,5 +88,5 @@ jobs:
       - name: Validate README exists
         run: test -f README.md && echo "✓ README.md found" || echo "WARNING: README.md not found"
 
-      - name: Validate LICENSE exists
-        run: test -f LICENSE && echo "✓ LICENSE found" || echo "WARNING: LICENSE not found"
+      - name: Validate LICENSE.md exists
+        run: test -f LICENSE.md && echo "✓ LICENSE.md found" || echo "WARNING: LICENSE.md not found"
